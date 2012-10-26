@@ -1,0 +1,7 @@
+parameters:
+#    zorbus_faq.example.class: Zorbus\FaqBundle\Example
+
+services:
+#    zorbus_faq.example:
+#        class: %zorbus_faq.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
