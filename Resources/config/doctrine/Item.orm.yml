@@ -1,0 +1,61 @@
+Zorbus\FaqBundle\Entity\Item:
+    type: entity
+    table: zorbus_faq_item
+    repositoryClass: Zorbus\FaqBundle\Entity\ItemRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        question:
+            type: text
+            nullable: false
+        answer:
+            type: text
+            nullable: false
+        image:
+            type: string
+            length: 255
+            nullable: true
+        enabled:
+            type: boolean
+            default: true
+            nullable: true
+        position:
+            type: integer
+            default: 1
+            nullable: true
+            gedmo:
+                - sortablePosition
+        slug:
+            type: string
+            length: 255
+            nullable: true
+            gedmo:
+                slug:
+                    separator: '-'
+                    style: default
+                    fields:
+                        - question
+        created_at:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: create
+        updated_at:
+            type: datetime
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update
+    manyToOne:
+        menu:
+            targetEntity: Zorbus\FaqBundle\Entity\Faq
+            inversedBy: items
+            joinColumn:
+                name: faq_id
+                referencedColumnName: id
+                onDelete: CASCADE
+            gedmo:
+                - sortableGroup
