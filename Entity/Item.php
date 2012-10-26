@@ -276,4 +276,32 @@ class Item extends Base\Item
     {
         return $this->menu;
     }
+    /**
+     * @var Zorbus\FaqBundle\Entity\Faq
+     */
+    private $faq;
+
+
+    /**
+     * Set faq
+     *
+     * @param Zorbus\FaqBundle\Entity\Faq $faq
+     * @return Item
+     */
+    public function setFaq(\Zorbus\FaqBundle\Entity\Faq $faq = null)
+    {
+        $this->faq = $faq;
+    
+        return $this;
+    }
+
+    /**
+     * Get faq
+     *
+     * @return Zorbus\FaqBundle\Entity\Faq 
+     */
+    public function getFaq()
+    {
+        return $this->faq;
+    }
 }
