@@ -50,7 +50,7 @@ Zorbus\FaqBundle\Entity\Item:
                 timestampable:
                     on: update
     manyToOne:
-        menu:
+        faq:
             targetEntity: Zorbus\FaqBundle\Entity\Faq
             inversedBy: items
             joinColumn:
