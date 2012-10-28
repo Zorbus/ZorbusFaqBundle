@@ -7,8 +7,10 @@ namespace Zorbus\FaqBundle\Entity\Base;
  */
 abstract class Faq
 {
+
     public function __toString()
     {
         return $this->getTitle();
     }
+
 }

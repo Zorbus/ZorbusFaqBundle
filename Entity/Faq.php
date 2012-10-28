@@ -2,11 +2,14 @@
 
 namespace Zorbus\FaqBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Zorbus\FaqBundle\Entity\Faq
  */
 class Faq extends Base\Faq
 {
+
     /**
      * @var integer $id
      */
@@ -263,4 +266,5 @@ class Faq extends Base\Faq
     {
         return $this->items;
     }
+
 }

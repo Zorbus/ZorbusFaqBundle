@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Item extends Base\Item
 {
+
     /**
      * @var integer $id
      */
@@ -58,7 +59,6 @@ class Item extends Base\Item
      * @var Zorbus\FaqBundle\Entity\Faq
      */
     private $menu;
-
 
     /**
      * Get id
@@ -276,11 +276,11 @@ class Item extends Base\Item
     {
         return $this->menu;
     }
+
     /**
      * @var Zorbus\FaqBundle\Entity\Faq
      */
     private $faq;
-
 
     /**
      * Set faq
@@ -291,17 +291,53 @@ class Item extends Base\Item
     public function setFaq(\Zorbus\FaqBundle\Entity\Faq $faq = null)
     {
         $this->faq = $faq;
-    
+
         return $this;
     }
 
     /**
      * Get faq
      *
-     * @return Zorbus\FaqBundle\Entity\Faq 
+     * @return Zorbus\FaqBundle\Entity\Faq
      */
     public function getFaq()
     {
         return $this->faq;
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function preImageUpload()
+    {
+        if (null !== $this->imageTemp)
+        {
+            $this->image = sha1(uniqid(mt_rand(), true)) . '.' . $this->imageTemp->guessExtension();
+        }
+    }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function postRemove()
+    {
+        if ($file = $this->getAbsolutePath($this->image))
+        {
+            @unlink($file);
+        }
+    }
+
+    /**
+     * @ORM\PostPersist
+     */
+    public function postImageUpload()
+    {
+        if ($this->imageTemp instanceof UploadedFile)
+        {
+            $this->imageTemp->move($this->getUploadRootDir(), $this->image);
+
+            unset($this->imageTemp);
+        }
+    }
+
 }
