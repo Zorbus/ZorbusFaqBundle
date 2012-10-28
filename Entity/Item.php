@@ -332,7 +332,7 @@ class Item extends Base\Item
      */
     public function postImageUpload()
     {
-        if ($this->imageTemp instanceof UploadedFile)
+        if ($this->imageTemp instanceof \Symfony\Component\HttpFoundation\File\UploadedFile)
         {
             $this->imageTemp->move($this->getUploadRootDir(), $this->image);
 
