@@ -15,8 +15,8 @@ class ItemAdmin extends Admin
     {
         $formMapper
                 ->add('faq')
-                ->add('question')
-                ->add('answer')
+                ->add('question', 'textarea', array('attr' => array('class' => 'ckeditor')))
+                ->add('answer', 'textarea', array('attr' => array('class' => 'ckeditor')))
                 ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
                 ->add('position')
                 ->add('enabled', null, array('required' => false))
