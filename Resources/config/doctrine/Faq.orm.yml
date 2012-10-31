@@ -13,6 +13,7 @@ Zorbus\FaqBundle\Entity\Faq:
             nullable: false
         description:
             type: text
+            nullable: true
         lang:
             type: string
             length: 5

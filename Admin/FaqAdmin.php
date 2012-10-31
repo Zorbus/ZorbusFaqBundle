@@ -13,7 +13,7 @@ class FaqAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('description', 'textarea', array('attr' => array('class' => 'ckeditor')))
+            ->add('description', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
             ->add('lang')
             ->add('enabled', null, array('required' => false))
         ;
@@ -38,6 +38,7 @@ class FaqAdmin extends Admin
     {
         $errorElement
             ->with('title')
+                ->assertNotNull()
                 ->assertMaxLength(array('limit' => 255))
             ->end()
         ;

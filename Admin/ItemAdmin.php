@@ -15,8 +15,8 @@ class ItemAdmin extends Admin
     {
         $formMapper
                 ->add('faq')
-                ->add('question', 'textarea', array('attr' => array('class' => 'ckeditor')))
-                ->add('answer', 'textarea', array('attr' => array('class' => 'ckeditor')))
+                ->add('question', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
+                ->add('answer', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
                 ->add('position')
                 ->add('enabled', null, array('required' => false))
@@ -43,7 +43,15 @@ class ItemAdmin extends Admin
     public function validate(ErrorElement $errorElement, $object)
     {
         $errorElement
+                ->with('faq')
+                ->assertNotBlank()
+                ->end()
                 ->with('question')
+                ->assertNotBlank()
+                ->assertMaxLength(array('limit' => 255))
+                ->end()
+                ->with('answer')
+                ->assertNotBlank()
                 ->assertMaxLength(array('limit' => 255))
                 ->end()
         ;
