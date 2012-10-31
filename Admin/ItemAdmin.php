@@ -14,7 +14,7 @@ class ItemAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-                ->add('faq')
+                ->add('faq', null, array('required' => true, 'attr' => array('class' => 'span5 select2')))
                 ->add('question', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('answer', 'textarea', array('required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
