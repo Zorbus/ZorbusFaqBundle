@@ -9,14 +9,14 @@ parameters:
     zorbus_faq.item.controller.class: SonataAdminBundle:CRUD
 
 services:
-    zorbus_faq.faq.faq.admin:
+    zorbus_faq.faq.admin:
         class: %zorbus_faq.faq.admin.class%
         arguments: [~, %zorbus_faq.faq.entity.class%, %zorbus_faq.faq.controller.class%]
         calls:
             - [setTranslationDomain, [FaqBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Faqs, label: Faqs }
-    zorbus_faq.faq.item.admin:
+    zorbus_faq.item.admin:
         class: %zorbus_faq.item.admin.class%
         arguments: [~, Zorbus\FaqBundle\Entity\Item, %zorbus_faq.item.controller.class%]
         calls:
