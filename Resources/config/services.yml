@@ -18,7 +18,7 @@ services:
             - { name: sonata.admin, manager_type: orm, group: Faqs, label: Faqs }
     zorbus_faq.item.admin:
         class: %zorbus_faq.item.admin.class%
-        arguments: [~, Zorbus\FaqBundle\Entity\Item, %zorbus_faq.item.controller.class%]
+        arguments: [~, %zorbus_faq.item.entity.class%, %zorbus_faq.item.controller.class%]
         calls:
             - [setTranslationDomain, [FaqBundle]]
         tags:
