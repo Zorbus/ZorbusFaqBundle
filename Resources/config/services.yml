@@ -8,6 +8,8 @@ parameters:
     zorbus_faq.faq.controller.class: SonataAdminBundle:CRUD
     zorbus_faq.item.controller.class: SonataAdminBundle:CRUD
 
+    zorbus_block.service.faq.class: Zorbus\FaqBundle\Model\BlockFaqConfig
+
 services:
     zorbus_faq.faq.admin:
         class: %zorbus_faq.faq.admin.class%
@@ -23,3 +25,9 @@ services:
             - [setTranslationDomain, [FaqBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Faqs, label: Items }
+    zorbus_block.service.faq:
+        class: %zorbus_block.service.faq.class%
+        scope: prototype
+        arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel']
+        tags:
+            - { name: zorbus_block.block, category: FAQs }

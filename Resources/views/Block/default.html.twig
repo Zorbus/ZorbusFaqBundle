@@ -1,0 +1,13 @@
+<div class="row-fluid">
+    <div class="well">
+        <h2>{{ faq }}</h2>
+        <div class="tab-content">
+            <dl>
+            {% for item in items %}
+                <dt>{{ item.question | raw }}</dt>
+                <dd>{{ item.answer | raw }}</dd>
+            {% endfor %}
+            </dl>
+        </div>
+    </div>
+</div>
