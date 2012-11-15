@@ -25,7 +25,7 @@ services:
             - [setTranslationDomain, [FaqBundle]]
         tags:
             - { name: sonata.admin, manager_type: orm, group: Faqs, label: Items }
-    zorbus_block.service.faq:
+    zorbus_faq.block.faq:
         class: %zorbus_block.service.faq.class%
         scope: prototype
         arguments: ['@zorbus_block.block.admin', '@form.factory', '@http_kernel']

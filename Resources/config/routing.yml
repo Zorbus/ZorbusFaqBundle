@@ -1,3 +1,1 @@
-zorbus_faq_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: ZorbusFaqBundle:Default:index }
+
