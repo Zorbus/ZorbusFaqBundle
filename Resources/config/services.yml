@@ -15,16 +15,16 @@ services:
         class: %zorbus_faq.faq.admin.class%
         arguments: [~, %zorbus_faq.faq.entity.class%, %zorbus_faq.faq.controller.class%]
         calls:
-            - [setTranslationDomain, [FaqBundle]]
+            - [setTranslationDomain, [ZorbusFaqBundle]]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Faqs, label: Faqs }
+            - { name: sonata.admin, manager_type: orm, group: FAQs, label: FAQs }
     zorbus_faq.item.admin:
         class: %zorbus_faq.item.admin.class%
         arguments: [~, %zorbus_faq.item.entity.class%, %zorbus_faq.item.controller.class%]
         calls:
-            - [setTranslationDomain, [FaqBundle]]
+            - [setTranslationDomain, [ZorbusFaqBundle]]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: Faqs, label: Items }
+            - { name: sonata.admin, manager_type: orm, group: FAQs, label: Items }
     zorbus_faq.block.faq:
         class: %zorbus_faq.block.faq.class%
         scope: prototype
