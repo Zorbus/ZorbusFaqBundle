@@ -23,48 +23,48 @@
                 <target>Língua</target>
             </trans-unit>
             <trans-unit id="6">
-                <source></source>
-                <target></target>
+                <source>Faq Show</source>
+                <target>Mostrar FAQ</target>
             </trans-unit>
             <trans-unit id="7">
-                <source></source>
-                <target></target>
+                <source>Faq History</source>
+                <target>Histórico da FAQ</target>
             </trans-unit>
             <trans-unit id="8">
-                <source></source>
-                <target></target>
+                <source>Item List</source>
+                <target>Listar items</target>
             </trans-unit>
             <trans-unit id="9">
-                <source></source>
-                <target></target>
+                <source>Question</source>
+                <target>Pergunta</target>
             </trans-unit>
             <trans-unit id="10">
-                <source></source>
-                <target></target>
+                <source>Faq</source>
+                <target>FAQ</target>
             </trans-unit>
             <trans-unit id="11">
-                <source></source>
-                <target></target>
+                <source>Items</source>
+                <target>Itens</target>
             </trans-unit>
             <trans-unit id="12">
-                <source></source>
-                <target></target>
+                <source>Answer</source>
+                <target>Resposta</target>
             </trans-unit>
             <trans-unit id="13">
-                <source></source>
-                <target></target>
+                <source>Image</source>
+                <target>Imagem</target>
             </trans-unit>
             <trans-unit id="14">
-                <source></source>
-                <target></target>
+                <source>Position</source>
+                <target>Posição</target>
             </trans-unit>
             <trans-unit id="15">
-                <source></source>
-                <target></target>
+                <source>Item History</source>
+                <target>Histórico do item</target>
             </trans-unit>
             <trans-unit id="16">
-                <source></source>
-                <target></target>
+                <source>Dashboard</source>
+                <target>Painel de controlo</target>
             </trans-unit>
             <trans-unit id="17">
                 <source></source>
