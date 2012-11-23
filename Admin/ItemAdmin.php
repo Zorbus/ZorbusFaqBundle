@@ -7,7 +7,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Validator\Constraints\MaxLength;
+use Symfony\Component\Validator\Constraints\Type;
 
 class ItemAdmin extends Admin
 {
@@ -19,23 +19,22 @@ class ItemAdmin extends Admin
                     'required' => true,
                     'attr' => array('class' => 'span5 select2'),
                     'constraints' => array(
-                        new NotBlank()
+                        new NotBlank(),
+                        new Type(array('type' => 'Zorbus\FaqBundle\Entity\Faq'))
                     )
                  ))
                 ->add('question', 'textarea', array(
                     'required' => false,
                     'attr' => array('class' => 'ckeditor'),
                     'constraints' => array(
-                        new NotBlank(),
-                        new MaxLength(array('limit' => 255))
+                        new NotBlank()
                     )
                  ))
                 ->add('answer', 'textarea', array(
                     'required' => false,
                     'attr' => array('class' => 'ckeditor'),
                     'constraints' => array(
-                        new NotBlank(),
-                        new MaxLength(array('limit' => 255))
+                        new NotBlank()
                     )
                 ))
                 ->add('imageTemp', 'file', array('required' => false, 'label' => 'Image'))
@@ -55,8 +54,8 @@ class ItemAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-                ->addIdentifier('question')
-                ->addIdentifier('faq')
+                ->addIdentifier('question', 'text')
+                ->addIdentifier('faq', 'text')
                 ->add('enabled')
         ;
     }
